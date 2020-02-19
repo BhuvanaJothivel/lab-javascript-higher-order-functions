@@ -67,6 +67,10 @@ describe("Filter", () =>{
     expect(filterIsEven([-2, -4, -7, -11, -13, -2, -3])).toEqual('Invalid')
   });
 
+  it("it should return Invalid Data in an array - if any elements in an array contains string ", function() {
+    expect(filterIsEven([2, 4, 9, '7', 11, '13', 3])).toEqual('Invalid Data in an array')
+  });
+
   it("it should return all even numbers ", function() {
     expect(filterIsEven([2, 4, 9, 7, 11, 13, 3])).toEqual([2, 4])
   });
@@ -81,6 +85,10 @@ describe("Filter", () =>{
 
   it("it should return Invalid - if the given array contains only negative values", function() {
     expect(filterIsPrime([-2, -4, -7, -11, -13, -2, -3])).toEqual('Invalid')
+  });
+
+  it("it should return Invalid Data in an array - if any elements in an array contains string ", function() {
+    expect(filterIsPrime([2, 4, 9, '7', 11, '13', 3])).toEqual('Invalid Data in an array')
   });
 
   it("it should return all prime numbers ", function() {
@@ -105,6 +113,10 @@ describe("Reject", () =>{
     expect(rejectNonPrime([-2, -4, -7, -11, -13, -2, -3])).toEqual('Invalid')
   });
 
+  it("it should return Invalid Data in an array - if any elements in an array contains string ", function() {
+    expect(rejectNonPrime([2, 4, 9, '7', 11, '13', 3])).toEqual('Invalid Data in an array')
+  });
+
   it("it should return all non prime numbers ", function() {
     expect(rejectNonPrime([2, 4, 9, 7, 11, 13, 3])).toEqual([4, 9])
   });
@@ -124,6 +136,10 @@ describe("Lambda", function() {
 
   it("it should return Invalid - if the given array contains only negative values", function() {
     expect(isEven([-2, -4, -7, -11, -13, -2, -3])).toEqual('Invalid')
+  });
+
+  it("it should return Invalid Data in an array - if any elements in an array contains string ", function() {
+    expect(isEven([2, 4, 9, '7', 11, '13', 3])).toEqual('Invalid Data in an array')
   });
 
   it("it should return all even numbers ", function() {
@@ -148,6 +164,10 @@ describe("Map", function() {
     expect(findSquareOfNumbers([-2, -4, -7, -11, -13, -2, -3])).toEqual('Invalid')
   });
 
+  it("it should return Invalid Data in an array - if any elements in an array contains string ", function() {
+    expect(findSquareOfNumbers([2, 4, 9, '7', 11, '13', 3])).toEqual('Invalid Data in an array')
+  });
+
   it("it should return all even numbers ", function() {
     expect(findSquareOfNumbers([2, 4, 9, 7, 11, 13, 3])).toEqual([4, 16, 81, 49, 121, 169, 9])
   });
@@ -167,6 +187,10 @@ describe("Reduce", function() {
 
   it("it should return Invalid - if the given array contains only negative values", function() {
     expect(multiply([-2, -4, -7, -11, -13, -2, -3])).toEqual('Invalid')
+  });
+
+  it("it should return Invalid Data in an array - if any elements in an array contains string ", function() {
+    expect(multiply([2, 4, 9, '7', 11, '13', 3])).toEqual('Invalid Data in an array')
   });
 
   it("it should return all even numbers ", function() {
