@@ -10,7 +10,7 @@ We are going to discover how these functions are useful through some examples; i
 ```
 Fork this repo
 Clone this repo
-Practice JavaScript Basics - Datatypes, Operators, Conditions
+Practice JavaScript - slice, splice, filter, reduce, reject, map, lambda
 ```
 
 ## How To Submit
@@ -28,6 +28,9 @@ And finally, create a pull request so your ProGrad Mentor (PM) can review your w
 
 Open the `SpecRunner.html` file on your browser and start coding to pass the test. Remember to focus on one test at a time and read carefully the instructions to understand what should be done.
 
+You can write your code in `app.js` which is placed inside the folder of `src` to make all test cases to be passed.
+
+
 ### Function #1: Array Slice
 
 The `slice()` method returns the selected elements in an array, as a new array object. This method starts slicing the array by given start argument and ends at given second argument's before value.
@@ -40,6 +43,7 @@ Expected output: [burger, fingerShips, donuts]
 ```
 Create a new array named as `modifiedFood` and use `slice()` to get the above stated expected output.
 
+
 ### Function #2: Array Splice
 
 The splice() method adds/removes items to/from an array, and returns the removed item(s).
@@ -51,6 +55,7 @@ const foods = [pizza, burger, fingerShips, donuts, springRoll];
 Expected output: [pizza, burger, noodles, icecream, fingerShips, donuts, springRoll];
 ```
 Create a new array named as `modifiedFood` and use `splice()` to get the above stated expected output.
+
 
 ### Function #3: Filter
 
@@ -72,6 +77,7 @@ for example numberArray.filter(filterIsEven)
 ```
 
 Next, Let's build this level by creating the functon called `filterIsPrime()` with takes same `numberArray` as arguments and _returns all prime numbers from the above given array_.
+
 
 ### Function #4: Reject
 
