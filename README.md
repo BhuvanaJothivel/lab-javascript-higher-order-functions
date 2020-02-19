@@ -1,8 +1,10 @@
 ![Image description](https://i1.faceprep.in/ProGrad/face-logo-resized.png)
 
-# ProGrad Lab | Story Time
+# ProGrad Lab | Higher Order Function
 
-This is a short story about a girl named Karen and her friend. Run `index.html` to view the story. You will see that the story is incomplete. On finishing each _Trial_, a part of the story will be unlocked. Go to the `src/app.js` file and complete all the unfinished code to find out how this story ends.
+Higher Order Functions are functions that take other functions as parameters, Mind Blown 💥.
+
+We are going to discover how these functions are useful through some examples; in particular, we are going to recreate the logic for this type of function for our's better understanding.
 
 ## What should you do
 ```
@@ -26,41 +28,92 @@ And finally, create a pull request so your ProGrad Mentor (PM) can review your w
 
 Open the `SpecRunner.html` file on your browser and start coding to pass the test. Remember to focus on one test at a time and read carefully the instructions to understand what should be done.
 
-### Progression 1: Home sweet home
+### Function #1: Array Slice
 
-We've got some basic information about Karen's home. Find out the type of each data. Create a function `moreAboutHome()` which takes `address, distanceFromTown, hasNeighbours` as arguments and _returns all datatypes concatenated in a single variable_.
+The `slice()` method returns the selected elements in an array, as a new array object. This method starts slicing the array by given start argument and ends at given second argument's before value.
 
-### Progression 2: My name is Karen
+Take an example array as
+```
+const foods = [pizza, burger, fingerShips, donuts, springRoll];
 
-Now, we're given some more information about Karen's family. Create a function `moreAboutKaren()` that takes `parents, noOfSiblings, isNuclearFamily` as arguments. Check if the arguments passed are of the datatypes `String, Number, Boolean` respectively and _return true/false_ accordingly.
+Expected output: [burger, fingerShips, donuts]
+```
+Create a new array named as `modifiedFood` and use `slice()` to get the above stated expected output.
 
-### Progression 3: Karen's new friend
+### Function #2: Array Splice
 
-Karen says she's made a new friend but Lily (Karen's Mom) doesn't believe her yet. create a function `doesFriendExist()` that takes `ageInText, ageInNumber` as arguments. It checks which of the given value is `NaN` and _returns the value_.
+The splice() method adds/removes items to/from an array, and returns the removed item(s).
 
-### Progression 4: Lily's investigation
+Take an example of same array as
+```
+const foods = [pizza, burger, fingerShips, donuts, springRoll];
 
-Lily gave Karen some sweets in order to calm her down so she could follow her. Lily has a sweet tooth and couldn't resist the temptation. She ate a lot of them on her way to the river.
+Expected output: [pizza, burger, noodles, icecream, fingerShips, donuts, springRoll];
+```
+Create a new array named as `modifiedFood` and use `splice()` to get the above stated expected output.
 
-- Lily gave Karen x sweets
-- Karen ate y sweets herself
-- She ate another z sweets every n meters travelled
-- Her friend divided the remaining sweets into 2 parts for each of them.
+### Function #3: Filter
 
-  Create a function `sweetTooth()` which takes `totalNoOfSweets, sweetsConsumedByKaren, sweetsConsumedInNMeters, metersToTravel` as arugments and _return number of sweets Karen's friend would have_.
+Filter is a method of arrays. It accepts as argument a test function which should return a boolean, and returns a new array with only the elements for which the test function returned true.
 
-### Progression 5: Haunting discovery
+We've got some basic information about filter.  
 
-Lily stalks Karen slowly, making sure not to alert her. Suddenly, a gust of wind sends a chill down her spine. She feels the temperature dropping and checks her phone. It displays the temperature in fahrenheit. Create a function `convertToCelsius()` which takes an argument `fahrenheit` and _returns the temperature in celcius_.
+Now, Create a function `filterIsEven()` which takes `numberArray` as arguments and _returns all even numbers from the given array_.
 
-### Progression 6: Rising paranoia
+```
+Take numberArray as
 
-Lily starts panicking once she reaches. She feels there's something wrong with her and requires immediate medical attention. She cannot decide what to do next. How to fix this without hurting her child any further. Create a function `aDifficultChoice()` which takes an argument `choice` and _returns the corresponding choice_.
+const numberArray = [12,324,213,4,2,3,45,4234];
+```
 
-### Progression 7: Console Karen
+```
+Use _filter_ method to execute function for the above example
+for example numberArray.filter(filterIsEven)
+```
 
-Lily's actions had a negative effect on Karen and now she's drifted further away. Lily realizes that she must do something immediately to console her daughter. She thinks of a couple of strategies that might help. Create a function `consoleKaren()` which takes an argument `strategies` and _returns a concatenated string of strategies_. Each strategy is seperated by a space.
+Next, Let's build this level by creating the functon called `filterIsPrime()` with takes same `numberArray` as arguments and _returns all prime numbers from the above given array_.
 
-_This lab is inspired by [Mysterious Friend](https://yourstoryclub.com/short-stories-unusual-experience/thriller-short-story-mysterious-friend/) - yourstoryclub.com_
+### Function #4: Reject
+
+We can now reuse the `filterIsPrime()` function in conjunction with reject to get all the non-prime numbers in the array. The reject function is the opposite of the filter: it creates an array with all the elements but those that satisfy the condition.
+
+Create a function `rejectNonPrime()` which takes `numberArray` as arguments and _return all non-prime numbers from the above given array in Function #1_.
+```
+Use _reject_ method to execute function for the above example
+for example numberArray.reject(filterIsEven)
+```
+
+### Function #5: Lambda
+
+When defining short functions, it's often convenient to use an alternative syntax called lambda function that allows us to define anonymous functions in a more compact way: _( /*arguments*/ ) => { /*code*/ }_. If our function is only a return statement, we can even strip the curly brackets and avoid writing return: _( /*arguments*/ ) => /*value to return*/_.
+
+Let's rewrite the function `isEven()` by using the concept of Lambda Function.
+
+
+### Function #6: Map
+
+Another very useful higher order function is map: it takes a function and applies it to all the elements of an array.
+The syntax is identical to `filter`
+
+Let's create a function `findSquareOfNumbers()` which takes the following array called `myArray` as arguments and _returns power value of all elements in the given array_.
+
+```
+const myArray = [11, 34, 20, 5, 53, 16];
+```
+
+### Function #7: Reduce
+
+Reduce is the last higher order function we are going to discuss and it's also the most powerful: in fact, you can implement any list transformation with reduce.
+
+Reduce takes in a callback function and a starting value, the callback function takes as arguments an accumulator and the value of the current element of the array and returns the accumulator to be used in the next cycle. The value returned from the last call of the callback function is the value returned by `reduce`.
+
+Create a function `multiply()` which takes an argument of `myArray` which holds the values as `[2, 3, 5, 10]` and _returns multiplication value of all numbers in the given array_.
+
+Let's extend our knowledge by `implementing map with reduce`. Take the same function action of `multiply()` and try using `reduce` to get the same output.
+
+```
+For example 
+map([2,3,5,10] , (x) => Math.pow(x,2));
+```
 
 Happy Coding ProGrad ❤️
